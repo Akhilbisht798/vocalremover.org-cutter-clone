@@ -2,16 +2,18 @@ import { useState } from 'react';
 import { Center, Tooltip, UnstyledButton, Stack, rem } from '@mantine/core';
 import {
   IconHome2,
-  IconGauge,
-  IconDeviceDesktopAnalytics,
-  IconFingerprint,
-  IconCalendarStats,
-  IconUser,
-  IconSettings,
-  IconLogout,
-  IconSwitchHorizontal,
+  IconArrowsSplit2,
+  IconMicrophone,
+  IconPlayerRecord,
+  IconArrowsJoin,
+  IconScissors,
+  IconBorderVertical,
+  IconSpeakerphone,
+  IconTriangle,
+  IconHelpHexagon,
+  IconLanguage,
+  IconSquareToggle
 } from '@tabler/icons-react';
-import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from './NavbarMinimal.module.css';
 
 interface NavbarLinkProps {
@@ -32,13 +34,14 @@ function NavbarLink({ icon: Icon, label, active, onClick }: NavbarLinkProps) {
 }
 
 const mockdata = [
-  { icon: IconHome2, label: 'Home' },
-  { icon: IconGauge, label: 'Dashboard' },
-  { icon: IconDeviceDesktopAnalytics, label: 'Analytics' },
-  { icon: IconCalendarStats, label: 'Releases' },
-  { icon: IconUser, label: 'Account' },
-  { icon: IconFingerprint, label: 'Security' },
-  { icon: IconSettings, label: 'Settings' },
+  { icon: IconBorderVertical, label: 'Remover' },
+  { icon: IconArrowsSplit2, label: 'Splitter' },
+  { icon: IconSpeakerphone, label: 'Pitcher' },
+  { icon: IconTriangle, label: 'Key BPM finder' },
+  { icon: IconScissors, label: 'Cutter' },
+  { icon: IconArrowsJoin, label: 'Joiner' },
+  { icon: IconMicrophone, label: 'Recorder' },
+  { icon: IconPlayerRecord, label: 'Karaoke' },
 ];
 
 export function NavbarMinimal() {
@@ -56,7 +59,7 @@ export function NavbarMinimal() {
   return (
     <nav className={classes.navbar}>
       <Center>
-        <MantineLogo type="mark" size={30} />
+        <IconSquareToggle type='mark' size={30} />
       </Center>
 
       <div className={classes.navbarMain}>
@@ -66,8 +69,8 @@ export function NavbarMinimal() {
       </div>
 
       <Stack justify="center" gap={0}>
-        <NavbarLink icon={IconSwitchHorizontal} label="Change account" />
-        <NavbarLink icon={IconLogout} label="Logout" />
+        <NavbarLink icon={IconHelpHexagon} label="Change account" />
+        <NavbarLink icon={IconLanguage} label="Logout" />
       </Stack>
     </nav>
   );
