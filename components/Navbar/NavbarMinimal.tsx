@@ -81,7 +81,7 @@ export function NavbarMinimal() {
       </div>
 
       <Stack justify="center" gap={0}>
-        <NavbarLink icon={IconHelpHexagon} label="Support" route='/remove' />
+        <NavbarLink icon={IconHelpHexagon} label="Support" route='/support' />
         <NavbarLink icon={IconLanguage} label="Change Language" route='/remove'/>
       </Stack>
     </nav>
