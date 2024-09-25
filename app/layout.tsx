@@ -7,7 +7,6 @@ import { ColorSchemeScript, Flex, MantineProvider, rem, UnstyledButton } from '@
 import { theme } from '../theme';
 import { NavbarMinimal } from '@/components/Navbar/NavbarMinimal';
 import { IconSquareToggle } from '@tabler/icons-react';
-import styles from './layout.module.css'
 
 const metadata = {
   title: 'Mantine Next.js template',
@@ -22,7 +21,7 @@ export default function RootLayout({ children }: { children: any }) {
   }
 
   return (
-    <html lang="en">
+    <html lang="en" >
       <head>
         <ColorSchemeScript />
         <link rel="shortcut icon" href="/favicon.svg" />
@@ -31,9 +30,14 @@ export default function RootLayout({ children }: { children: any }) {
           content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
         />
       </head>
-      <body>
+      <body
+        style={{
+          backgroundColor: '#17171e', // --mainBgColor
+          color: '#eee', // --mainColor
+          border: `1px solid #262633`, // --borderColor
+        }}>
         <MantineProvider theme={theme}>
-          <div style={{ margin: "15px"}}>
+          <div>
             <UnstyledButton
               onClick={handleToggle}
               style={{
@@ -46,11 +50,27 @@ export default function RootLayout({ children }: { children: any }) {
               <IconSquareToggle style={{ width: rem(30), height: rem(30) }} stroke={1.5} />
             </UnstyledButton>
           </div>
-         <div style={{ display: "flex", gap: "10px" }}>
-            <div style={{ minHeight: "100vh" }}>
+         <div style={{ display: "flex" }}>
+            <div 
+              style={{
+                minHeight: "100vh",
+                backgroundColor: '#17171e', // --mainBgColor
+                color: '#eee', // --mainColor
+                // height: 'calc(var(--vh, 1vh) * 100)', // --bodyHeight
+                padding: '1rem',
+              }}
+            >
               {navbarVisible && <NavbarMinimal />}
             </div>
-            <div>
+            <div
+              style={{
+                flex: 1,
+                backgroundColor: '#17171e', // --mainBgColor
+                color: '#eee', // --mainColor
+                height: 'calc(var(--vh, 1vh) * 100)', // --bodyHeight
+                padding: '1rem',
+              }}
+            >
               {children}
             </div>
           </div>
