@@ -3,10 +3,11 @@
 import '@mantine/core/styles.css';
 
 import React, { useState } from 'react';
-import { ColorSchemeScript, MantineProvider, rem, UnstyledButton } from '@mantine/core';
+import { ColorSchemeScript, Flex, MantineProvider, rem, UnstyledButton } from '@mantine/core';
 import { theme } from '../theme';
 import { NavbarMinimal } from '@/components/Navbar/NavbarMinimal';
 import { IconSquareToggle } from '@tabler/icons-react';
+import styles from './layout.module.css'
 
 const metadata = {
   title: 'Mantine Next.js template',
@@ -32,19 +33,27 @@ export default function RootLayout({ children }: { children: any }) {
       </head>
       <body>
         <MantineProvider theme={theme}>
-          <UnstyledButton 
-          onClick={handleToggle} 
-          style={{
-            position: 'fixed', // Ensures it stays fixed on the page
-            top: rem(10), // Distance from the top of the screen
-            left: rem(30), // Distance from the left of the screen
-            zIndex: 1000, // Ensure it stays above other content
-          }}
-        >
-          <IconSquareToggle style={{ width: rem(30), height: rem(30) }} stroke={1.5} />
-        </UnstyledButton>
-          {navbarVisible && <NavbarMinimal /> }
-          {children}
+          <div style={{ margin: "15px"}}>
+            <UnstyledButton
+              onClick={handleToggle}
+              style={{
+                position: 'fixed',
+                top: rem(10),
+                left: rem(30),
+                zIndex: 1000,
+              }}
+            >
+              <IconSquareToggle style={{ width: rem(30), height: rem(30) }} stroke={1.5} />
+            </UnstyledButton>
+          </div>
+         <div style={{ display: "flex", gap: "10px" }}>
+            <div style={{ minHeight: "100vh" }}>
+              {navbarVisible && <NavbarMinimal />}
+            </div>
+            <div>
+              {children}
+            </div>
+          </div>
         </MantineProvider>
       </body>
     </html>

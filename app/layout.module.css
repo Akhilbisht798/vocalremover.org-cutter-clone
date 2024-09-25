@@ -1,0 +1,5 @@
+.mainContent {
+  flex-grow: 1; /* Take the remaining width */
+  padding: 20px; /* Add some padding for content */
+  background: #fff; /* Background color for content */
+}

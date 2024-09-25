@@ -69,7 +69,7 @@ export function NavbarMinimal() {
   ));
 
   return (
-    <nav className={classes.navbar}>
+    <nav className={classes.navbar} style={{ minHeight: "100%"}} >
       {/* <Center>
         <IconSquareToggle type='mark' size={30} />
       </Center> */}
